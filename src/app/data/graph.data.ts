@@ -36,7 +36,7 @@ function getRandomNumber(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const world: Graph = {
+export const world: Graph = {
     points: worldPoints,
     edges: worldEdges,
     totalCost: worldEdges.reduce((sum, edge) => sum + edge.cost, 0),
