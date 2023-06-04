@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "tsc && node --unhandled-rejections=strict ./dist/app-test.js",
+    "start": "tsc && node --unhandled-rejections=strict ./dist/app.js",
     "debug": "export DEBUG=* && npm run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
