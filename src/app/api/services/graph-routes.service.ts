@@ -1,6 +1,6 @@
 import {CRUD} from "../interfaces/crud.interface";
-import {GraphRouteDto} from "../models/graph-routes/dto/graph-route.dto";
-import GraphRouteDao from "../models/graph-routes/dao/graph-route.dao";
+import {GraphRouteDto} from "../../models/graph-routes/dto/graph-route.dto";
+import GraphRouteDao from "../../models/graph-routes/dao/graph-route.dao";
 
 class GraphRoutesService implements CRUD {
     async create(resource: GraphRouteDto): Promise<any> {

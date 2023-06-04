@@ -4,8 +4,8 @@ import * as http from 'http';
 import * as winston from 'winston';
 import * as expressWinston from 'express-winston';
 import cors from 'cors';
-import {CommonRoutesConfig} from './routes/common.routes.config';
-import {GraphRoutesRoutes} from './routes/graph-routes.routes.config';
+import {CommonRoutesConfig} from './api/routes/common.routes.config';
+import {GraphRoutesApiRoutes} from './api/routes/graph-routes.routes.config';
 import debug from 'debug';
 
 const app: express.Application = express();
@@ -44,7 +44,7 @@ if (!process.env.DEBUG) {
 // initialize the logger with the above configuration
 app.use(expressWinston.logger(loggerOptions));
 
-routes.push(new GraphRoutesRoutes(app));
+routes.push(new GraphRoutesApiRoutes(app));
 
 // simple route to make sure everything is working properly
 const runningMessage = `Server running at http://localhost:${port}`;
