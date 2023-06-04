@@ -5,6 +5,9 @@ export class SimpleGraph {
     points: Point[] = [];
     edges: Edge[] = [];
 
+    totalCost: number = 0;
+    totalTraffic: number = 0;
+
     constructor() {
         // initialise all points in the graph with all neighbours specified
         this.points = [
@@ -40,4 +43,12 @@ export class SimpleGraph {
     private getRandomNumber = (min: number, max: number): number => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
+
+    //TODO: implement these functions
+
+    // private calculateTotalWeight() {}
+    //
+    // private calculateTotalTraffic() {}
+    //
+    // generateSubGraph() {}
 }
