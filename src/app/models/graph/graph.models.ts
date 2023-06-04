@@ -10,3 +10,10 @@ export interface Point {
     pointId: string;
     neighbours: string[];
 }
+
+export interface Graph {
+    points: Point[];
+    edges: Edge[];
+    totalCost: number;
+    totalTraffic: number;
+}

@@ -9,6 +9,17 @@ export class GraphRoutesApiRoutes extends CommonRoutesConfig {
     }
 
     configureRoutes(): express.Application {
+        /**
+         * @swagger
+         * /routes:
+         *  get:
+         *      summary: Get all available derived routes
+         *      tags:
+         *          - GraphRoute
+         *      response:
+         *          '200':
+         *              description: Successful Response
+         */
         this.app.route('/routes')
             .get(GraphRoutesController.listAllRoutes)
             .post(

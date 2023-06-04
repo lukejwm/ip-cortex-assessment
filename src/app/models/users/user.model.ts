@@ -5,7 +5,7 @@
 //  all points specified actually exist! Initial assumption is that UI only provides users only with options that
 //  do exist
 
-export interface User {
+export interface UserRequest {
     userId: string;
     startPoint: string;
     destinationPoint: string;

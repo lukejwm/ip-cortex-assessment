@@ -4,6 +4,8 @@ import * as http from 'http';
 import * as winston from 'winston';
 import * as expressWinston from 'express-winston';
 import cors from 'cors';
+import * as swaggerUi from 'swagger-ui-express';
+import swaggerSpec from './swagger.config';
 import {CommonRoutesConfig} from './api/routes/common.routes.config';
 import {GraphRoutesApiRoutes} from './api/routes/graph-routes.routes.config';
 import debug from 'debug';
@@ -51,6 +53,9 @@ const runningMessage = `Server running at http://localhost:${port}`;
 app.get('/', (req: express.Request, res: express.Response) => {
     res.status(200).send(runningMessage)
 });
+
+// Serve Swagger UI and API documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 server.listen(port, () => {
     routes.forEach((route: CommonRoutesConfig) => {
