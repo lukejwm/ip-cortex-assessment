@@ -35,6 +35,10 @@ const loggerOptions: expressWinston.LoggerOptions = {
 
 if (!process.env.DEBUG) {
     loggerOptions.meta = false; // when not debugging, log requests as one-liners
+    // silence debugger during testing by watching for Mocha it() functions
+    if (typeof global.it === 'function') {
+        loggerOptions.level = 'http';
+    }
 }
 
 // initialize the logger with the above configuration
